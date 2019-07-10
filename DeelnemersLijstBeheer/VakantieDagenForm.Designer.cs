@@ -1,6 +1,6 @@
 ﻿namespace DeelnemersLijstBeheer
 {
-    partial class DeelnemersForm
+    partial class VakantieDagenForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.button2.Location = new System.Drawing.Point(200, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(182, 68);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Weergeven";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -46,20 +46,20 @@
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 68);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Aanmaken";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // DeelnemersForm
+            // VakantieDagenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 450);
+            this.ClientSize = new System.Drawing.Size(397, 119);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "DeelnemersForm";
-            this.Text = "DeelnemersForm";
+            this.Name = "VakantieDagenForm";
+            this.Text = "VakantieDagenForm";
             this.ResumeLayout(false);
 
         }

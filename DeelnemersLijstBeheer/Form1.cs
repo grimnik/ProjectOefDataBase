@@ -25,7 +25,20 @@ namespace DeelnemersLijstBeheer
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            DeelnemersForm deelnemers = new DeelnemersForm();
+            deelnemers.ShowDialog();
+        }
 
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            VakantieDagenForm vakantieDagen = new VakantieDagenForm();
+            vakantieDagen.ShowDialog();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            DocentenForm docenten = new DocentenForm();
+            docenten.ShowDialog();
         }
     }
 }

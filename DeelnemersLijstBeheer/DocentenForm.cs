@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace DeelnemersLijstBeheer
 {
-    public partial class DeelnemersForm : Form
+    public partial class DocentenForm : Form
     {
-        public DeelnemersForm()
+        public DocentenForm()
         {
             InitializeComponent();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            DeelnemersInvulForm deelnemersInvul = new DeelnemersInvulForm();
-            deelnemersInvul.ShowDialog();
+
         }
     }
 }

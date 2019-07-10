@@ -60,7 +60,25 @@
     <Compile Include="DeelnemersForm.Designer.cs">
       <DependentUpon>DeelnemersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeelnemersInvulForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeelnemersInvulForm.Designer.cs">
+      <DependentUpon>DeelnemersInvulForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Docenten.cs" />
+    <Compile Include="DocentenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentenForm.Designer.cs">
+      <DependentUpon>DocentenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocentenInvulForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentenInvulForm.Designer.cs">
+      <DependentUpon>DocentenInvulForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +120,29 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tijdregistraties.cs" />
+    <Compile Include="VakantieDagenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VakantieDagenForm.Designer.cs">
+      <DependentUpon>VakantieDagenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VakantieInvulForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VakantieInvulForm.Designer.cs">
+      <DependentUpon>VakantieInvulForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DeelnemersForm.resx">
       <DependentUpon>DeelnemersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeelnemersInvulForm.resx">
+      <DependentUpon>DeelnemersInvulForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocentenForm.resx">
+      <DependentUpon>DocentenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocentenInvulForm.resx">
+      <DependentUpon>DocentenInvulForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -135,6 +174,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VakantieDagenForm.resx">
+      <DependentUpon>VakantieDagenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VakantieInvulForm.resx">
+      <DependentUpon>VakantieInvulForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
