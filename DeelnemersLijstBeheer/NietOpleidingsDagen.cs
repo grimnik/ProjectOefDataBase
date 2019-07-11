@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeelnemersLijstBeheer
 {
-    class NietOpleidingsDagen
+    public class NietOpleidingsDagen
     {
         public int Id { get; set; }
         public DateTime Datum { get; set; }

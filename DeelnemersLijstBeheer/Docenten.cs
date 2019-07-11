@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DeelnemersLijstBeheer
 {
-    class Docenten 
+    public class Docenten 
     {
         public int Id { get; set; }
         public string Naam { get; set; }

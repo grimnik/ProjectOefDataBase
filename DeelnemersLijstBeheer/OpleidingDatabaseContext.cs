@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DeelnemersLijstBeheer
 {
-    class OpleidingDatabaseContext : DbContext
+    public class OpleidingDatabaseContext : DbContext
     {
         public OpleidingDatabaseContext() : base("Opleiding") 
         {
@@ -33,11 +33,13 @@ namespace DeelnemersLijstBeheer
             modelBuilder.Entity<OpleidingsInfo>()
                         .HasMany<Deelnemers>(s => s.Deelnemers)
                         .WithMany(c => c.OpleidingsInfo)
+                       
                         .Map(cs =>
                         {
                             cs.MapLeftKey("DeelnemersId");
                             cs.MapRightKey("OpleidingId");
                             cs.ToTable("DeelnemersOpleidingen");
+                            
                         });
 
         }

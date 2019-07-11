@@ -30,6 +30,7 @@ namespace DeelnemersLijstBeheer
                         Namiddag = checkBox2.Checked,
                         OpleidingsId = int.Parse(textBox1.Text)
                     });
+                    ctx.SaveChanges();
                 }
             }
             else

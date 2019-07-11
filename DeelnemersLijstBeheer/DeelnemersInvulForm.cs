@@ -21,9 +21,11 @@ namespace DeelnemersLijstBeheer
         {
             if (textBox1.Text != "" && dateTimePicker1 != null && textBox3.Text != "" && textBox4.Text != "" )
             {
+                
                 using(var ctx = new OpleidingDatabaseContext())
                 {
-                    var DeelnemersVar = ctx.Deelnemers.Add(new Deelnemers
+                    var Opleiding = ctx.OpleidingsInfos.ToList();
+                    var DeelnemersVar = ctx.Deelnemers.Add(new Deelnemers(Opleiding)
                     {
                         Naam = textBox1.Text,
                         GeboorteDatum = DateTime.Parse(dateTimePicker1.Text),
@@ -31,11 +33,20 @@ namespace DeelnemersLijstBeheer
                         BadgeNummer = int.Parse(textBox4.Text)
 
                     });
+                    ctx.SaveChanges();
                 }
             }
             else
             {
                 MessageBox.Show("Alle velden moeten ingevuld zijn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeelnemersInvulForm_Load(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                comboBox1.Text = ctx.OpleidingsInfos.Find(1).Opleiding.ToString();
             }
         }
     }

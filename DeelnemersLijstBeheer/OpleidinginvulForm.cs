@@ -23,7 +23,7 @@ namespace DeelnemersLijstBeheer
         private void Button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""
-                && textBox5.Text != "" && dateTimePicker1.Text != "" && dateTimePicker2.Text != "")
+                && textBox5.Text != "" && dateTimePicker1.Text != "" && dateTimePicker2.Text != "" && textBox6.Text != "" && textBox7.Text != "")
             {
 
                 using (var ctx = new OpleidingDatabaseContext())
@@ -35,10 +35,13 @@ namespace DeelnemersLijstBeheer
                         ContactPersoon = textBox3.Text,
                         OpleidingsPlaats = textBox4.Text,
                         RefOpleidingsPlaats = textBox5.Text,
+                        OeNummer = int.Parse(textBox6.Text),
+                        OpleidingsCode = int.Parse(textBox7.Text),
                         StartDatum = Convert.ToDateTime(dateTimePicker1.Text),
                         EindDatum = Convert.ToDateTime(dateTimePicker2.Text)
 
                     });
+                    ctx.SaveChanges();
                 }
             }
             else

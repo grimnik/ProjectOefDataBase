@@ -34,7 +34,7 @@ namespace DeelnemersLijstBeheer
             {
                 var opleidingvar = ctx.OpleidingsInfos.Select(o => new
                 {
-                    o.Id,
+                    
                     o.Instelling,
                     o.Opleiding,
                     o.ContactPersoon,
@@ -45,7 +45,7 @@ namespace DeelnemersLijstBeheer
                 });
                 foreach (var item in opleidingvar)
                 {
-                    Console.WriteLine(item.Id + " - " + item.Instelling + " - " +
+                    Console.WriteLine( item.Instelling + " - " +
                         item.Opleiding +" - "+ item.ContactPersoon +" - "+ item.OpleidingsPlaats +" - "+
                         item.RefOpleidingsPlaats +" - "+ item.StartDatum + " - " + item.EindDatum);
                 }
