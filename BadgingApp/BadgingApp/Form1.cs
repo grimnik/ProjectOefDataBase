@@ -35,7 +35,7 @@ namespace BadgingApp
 
                 if (Form.ShowDialog() == DialogResult.OK)
                 {
-                    label2.Text = Form.OpleidingPicked;
+                    label2.Text = Form.PickedOpleiding;
                 }
             }
         }
