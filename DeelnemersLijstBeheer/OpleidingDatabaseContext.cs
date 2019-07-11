@@ -18,5 +18,29 @@ namespace DeelnemersLijstBeheer
         public DbSet<Tijdregistraties> TijdRegistraties { get; set; }
         public DbSet<OpleidingsInfo> OpleidingsInfos { get; set; }
         public DbSet<NietOpleidingsDagen> NietOpleidingsDagens { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<OpleidingsInfo>()
+                        .HasMany(s => s.Docentens)
+                        .WithMany(c => c.OpleidingsInfo)
+                        .Map(cs =>
+                        {
+                            cs.MapLeftKey("DocentRefId");
+                            cs.MapRightKey("CourseRefId");
+                            cs.ToTable("DocentCourse");
+                        });
+            modelBuilder.Entity<OpleidingsInfo>()
+                        .HasMany<Deelnemers>(s => s.Deelnemers)
+                        .WithMany(c => c.OpleidingsInfo)
+                        .Map(cs =>
+                        {
+                            cs.MapLeftKey("DeelnemersId");
+                            cs.MapRightKey("OpleidingId");
+                            cs.ToTable("DeelnemersOpleidingen");
+                        });
+
+        }
+        
     }
 }

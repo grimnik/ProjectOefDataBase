@@ -40,5 +40,11 @@ namespace DeelnemersLijstBeheer
             DocentenForm docenten = new DocentenForm();
             docenten.ShowDialog();
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            TijdsregistratieForm tijdsregistratie = new TijdsregistratieForm();
+            tijdsregistratie.ShowDialog();
+        }
     }
 }

@@ -17,19 +17,25 @@ namespace DeelnemersLijstBeheer
             InitializeComponent();
         }
 
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                using (var ctx = new OpleidingDatabaseContext())
+                {
+                    var DocentenVar = ctx.Docentenen.Add(new Docenten
+                    {
+                        Naam = textBox1.Text,
+                        Bedrijf = textBox1.Text
+                    });
+                }
+            }
+            else
+            {
+                MessageBox.Show("Alle velden moeten ingevuld zijn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

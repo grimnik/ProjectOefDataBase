@@ -13,6 +13,6 @@ namespace DeelnemersLijstBeheer
         public string Naam { get; set; }
         public string Bedrijf { get; set; }
         
-        public virtual OpleidingsInfo OpleidingsInfo { get; set; }
+        public virtual ICollection<OpleidingsInfo> OpleidingsInfo { get; set; }
     }
 }

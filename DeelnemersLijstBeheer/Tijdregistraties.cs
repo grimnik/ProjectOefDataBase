@@ -11,8 +11,7 @@ namespace DeelnemersLijstBeheer
     {
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
-        public int OpleidingId { get; set; }
-        public int DeelnemerId { get; set; }
+        
         public virtual Deelnemers Deelnemers { get; set; }
         public virtual OpleidingsInfo OpleidingsInfo { get; set; }
     }

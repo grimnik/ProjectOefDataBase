@@ -15,10 +15,12 @@ namespace DeelnemersLijstBeheer
         public string ContactPersoon { get; set; }
         public string OpleidingsPlaats { get; set; }
         public string RefOpleidingsPlaats { get; set; }
+        public int OeNummer { get; set; }
+        public int OpleidingsCode { get; set; }
         public DateTime StartDatum { get; set; }
         public DateTime EindDatum { get; set; }
         public virtual List<Deelnemers> Deelnemers {get; set;}
-        public virtual List<Docenten> Docentens { get; set; }
+        public virtual ICollection<Docenten> Docentens { get; set; }
         public virtual List<NietOpleidingsDagen> NietOpleidings { get; set; }
     }
 }

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace DeelnemersLijstBeheer
 {
-    public partial class DocentenForm : Form
+    public partial class TijdsregistratieForm : Form
     {
-        public DocentenForm()
+        public TijdsregistratieForm()
         {
             InitializeComponent();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            DocentenInvulForm docentenInvul = new DocentenInvulForm();
-            docentenInvul.ShowDialog();
         }
     }
 }
