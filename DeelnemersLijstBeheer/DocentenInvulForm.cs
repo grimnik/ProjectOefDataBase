@@ -29,7 +29,7 @@ namespace DeelnemersLijstBeheer
                     var DocentenVar = ctx.Docentenen.Add(new Docenten(opleiding)
                     {
                         Naam = textBox1.Text,
-                        Bedrijf = textBox1.Text
+                        Bedrijf = textBox2.Text
                     });
                     ctx.SaveChanges();
                 }
