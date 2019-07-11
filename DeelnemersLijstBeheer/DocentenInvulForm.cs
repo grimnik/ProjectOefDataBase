@@ -25,7 +25,8 @@ namespace DeelnemersLijstBeheer
             {
                 using (var ctx = new OpleidingDatabaseContext())
                 {
-                    var DocentenVar = ctx.Docentenen.Add(new Docenten
+                    var opleiding = ctx.OpleidingsInfos.ToList();
+                    var DocentenVar = ctx.Docentenen.Add(new Docenten(opleiding)
                     {
                         Naam = textBox1.Text,
                         Bedrijf = textBox1.Text
@@ -36,6 +37,14 @@ namespace DeelnemersLijstBeheer
             else
             {
                 MessageBox.Show("Alle velden moeten ingevuld zijn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DocentenInvulForm_Load(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                comboBox1.Text = ctx.OpleidingsInfos.Find(1).Opleiding.ToString();
             }
         }
     }

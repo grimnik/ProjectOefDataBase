@@ -25,6 +25,8 @@ namespace DeelnemersLijstBeheer
                 using(var ctx = new OpleidingDatabaseContext())
                 {
                     var Opleiding = ctx.OpleidingsInfos.ToList();
+                    
+
 
                     var DeelnemersVar = ctx.Deelnemers.Add(new Deelnemers(Opleiding)
                     {
@@ -32,8 +34,9 @@ namespace DeelnemersLijstBeheer
                         GeboorteDatum = DateTime.Parse(dateTimePicker1.Text),
                         WoonPlaats = textBox3.Text,
                         BadgeNummer = int.Parse(textBox4.Text)
-
+                        
                     });
+                    
                     ctx.SaveChanges();
                 }
             }

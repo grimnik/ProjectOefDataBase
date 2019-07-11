@@ -14,5 +14,9 @@ namespace DeelnemersLijstBeheer
         public string Bedrijf { get; set; }
         
         public virtual ICollection<OpleidingsInfo> OpleidingsInfo { get; set; }
+        public Docenten(ICollection<OpleidingsInfo> opleidingsInfo)
+        {
+            OpleidingsInfo = opleidingsInfo;
+        }
     }
 }
