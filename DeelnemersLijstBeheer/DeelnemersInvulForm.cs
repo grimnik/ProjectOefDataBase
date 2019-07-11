@@ -25,6 +25,7 @@ namespace DeelnemersLijstBeheer
                 using(var ctx = new OpleidingDatabaseContext())
                 {
                     var Opleiding = ctx.OpleidingsInfos.ToList();
+
                     var DeelnemersVar = ctx.Deelnemers.Add(new Deelnemers(Opleiding)
                     {
                         Naam = textBox1.Text,

@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeelnemersLijstBeheer", "DeelnemersLijstBeheer\DeelnemersLijstBeheer.csproj", "{04457169-48CF-4545-A476-AAB9E78F463E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgingApp", "BadgingApp\BadgingApp\BadgingApp.csproj", "{599E92DF-3FC3-45E7-9E46-F4F0055996F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgingApp", "BadgingApp\BadgingApp.csproj", "{599E92DF-3FC3-45E7-9E46-F4F0055996F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04457169-48CF-4545-A476-AAB9E78F463E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04457169-48CF-4545-A476-AAB9E78F463E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04457169-48CF-4545-A476-AAB9E78F463E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04457169-48CF-4545-A476-AAB9E78F463E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{599E92DF-3FC3-45E7-9E46-F4F0055996F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{599E92DF-3FC3-45E7-9E46-F4F0055996F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{599E92DF-3FC3-45E7-9E46-F4F0055996F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7ACC39F8-2E0A-4FA2-A2A7-4A355B9ECC19}
+		SolutionGuid = {DA89CAE1-7F37-4EE8-805B-DA8978002423}
 	EndGlobalSection
 EndGlobal
