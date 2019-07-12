@@ -85,6 +85,12 @@
     <Compile Include="DocentenInvulForm.Designer.cs">
       <DependentUpon>DocentenInvulForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocentenWeergevenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentenWeergevenForm.Designer.cs">
+      <DependentUpon>DocentenWeergevenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DocentenInvulForm.resx">
       <DependentUpon>DocentenInvulForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocentenWeergevenForm.resx">
+      <DependentUpon>DocentenWeergevenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -16,7 +16,6 @@ namespace DeelnemersLijstBeheer
     {
 
        public string deelnemer { get; set; }
-            DeelnemersInvulForm deelnemersInvul = new DeelnemersInvulForm();
         public DeelnemersForm()
         {
             InitializeComponent();
@@ -26,6 +25,7 @@ namespace DeelnemersLijstBeheer
         private void Button1_Click(object sender, EventArgs e)
         {
             
+            DeelnemersInvulForm deelnemersInvul = new DeelnemersInvulForm();
             deelnemersInvul.ShowDialog();
         }
 
@@ -40,8 +40,7 @@ namespace DeelnemersLijstBeheer
 
         private void DeelnemersForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'opleidingDataSet.Deelnemers' table. You can move, or remove it, as needed.
-           // this.deelnemersTableAdapter.Fill(this.opleidingDataSet.Deelnemers); 
+            
             
             using (var ctx = new OpleidingDatabaseContext())
             {

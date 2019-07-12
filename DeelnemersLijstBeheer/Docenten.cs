@@ -18,5 +18,9 @@ namespace DeelnemersLijstBeheer
         {
             OpleidingsInfo = opleidingsInfo;
         }
+        public Docenten()
+        {
+
+        }
     }
 }

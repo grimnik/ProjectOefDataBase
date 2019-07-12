@@ -14,14 +14,24 @@ namespace DeelnemersLijstBeheer
     {
 
             DeelnemersForm deelnemers;
-        string Deelnemer { get; set; }
-        
+        private string deelnemer;
+
+        //private string GetDeelnemer()
+        //{
+        //    return deelnemer;
+        //}
+
+        private void SetDeelnemer(string value)
+        {
+            deelnemer = value;
+        }
+
         public DeelnemersWeergevenForm(DeelnemersForm deelnemersForm)
         {
             InitializeComponent();
             deelnemers = deelnemersForm;
-            
-           Deelnemer = deelnemers.deelnemer;
+
+            SetDeelnemer(deelnemers.deelnemer);
         }
 
         private void DeelnemersWeergevenForm_Load(object sender, EventArgs e)
