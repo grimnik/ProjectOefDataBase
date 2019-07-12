@@ -13,6 +13,7 @@ namespace BadgingApp
 {
     public partial class KiesOpleidingForm : Form
     {
+        string selected { get; set; }
         public KiesOpleidingForm()
         {
             InitializeComponent();
@@ -22,12 +23,13 @@ namespace BadgingApp
         {
             using (var ctx = new OpleidingDatabaseContext())
             {
-                comboBox1.Text = ctx.OpleidingsInfos.Find(1).Opleiding.ToString();
+                selected = ctx.OpleidingsInfos.Find(1).Opleiding.ToString();
+                comboBox1.Text = selected;
             }
         }
         public string PickedOpleiding
         {
-            get { return comboBox1.SelectedValue.ToString();  }
+            get { return comboBox1.Text = selected ;  }
         }
 
         private void Button1_Click(object sender, EventArgs e)

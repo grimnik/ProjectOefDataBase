@@ -47,7 +47,7 @@ namespace BadgingApp
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (button2.Text == "BAGDE IN")
+            if (button2.Text == "BADGE IN")
             {
 
                 using (var ctx = new OpleidingDatabaseContext())
@@ -55,10 +55,12 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(1);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     button2.Text = "BADGE OUT";
+                    ctx.SaveChanges();
+
                 }
             }
             else if (button2.Text == "BADGE OUT")
@@ -68,16 +70,18 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(1);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
+                    ctx.SaveChanges();
+                    button2.Text = "BADGE IN";
                 }
             }
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (button2.Text == "BAGDE IN")
+            if (button2.Text == "BADGE IN")
             {
 
                 using (var ctx = new OpleidingDatabaseContext())
@@ -89,6 +93,8 @@ namespace BadgingApp
                         DateTime = time
                     });
                     button2.Text = "BADGE OUT";
+                    ctx.SaveChanges();
+
                 }
             }
             else if (button2.Text == "BADGE OUT")
@@ -101,13 +107,15 @@ namespace BadgingApp
 
                         DateTime = time
                     });
+                    ctx.SaveChanges();
+                    button2.Text = "BADGE IN";
                 }
             }
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            if (button2.Text == "BAGDE IN")
+            if (button2.Text == "BADGE IN")
             {
 
                 using (var ctx = new OpleidingDatabaseContext())
@@ -119,6 +127,8 @@ namespace BadgingApp
                         DateTime = time
                     });
                     button2.Text = "BADGE OUT";
+                    ctx.SaveChanges();
+                    
                 }
             }
             else if (button2.Text == "BADGE OUT")
@@ -131,13 +141,15 @@ namespace BadgingApp
 
                         DateTime = time
                     });
+                    ctx.SaveChanges();
+                    button2.Text = "BADGE IN";
                 }
             }
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            if (button2.Text == "BAGDE IN")
+            if (button2.Text == "BADGE IN")
             {
 
                 using (var ctx = new OpleidingDatabaseContext())
@@ -149,6 +161,8 @@ namespace BadgingApp
                         DateTime = time
                     });
                     button2.Text = "BADGE OUT";
+                    ctx.SaveChanges();
+
                 }
             }
             else if (button2.Text == "BADGE OUT")
@@ -161,6 +175,8 @@ namespace BadgingApp
 
                         DateTime = time
                     });
+                    ctx.SaveChanges();
+                    button2.Text = "BADGE IN";
                 }
             }
         }

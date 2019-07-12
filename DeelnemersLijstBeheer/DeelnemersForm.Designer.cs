@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.opleidingDataSet = new DeelnemersLijstBeheer.OpleidingDataSet();
+            this.opleidingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deelnemersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deelnemersTableAdapter = new DeelnemersLijstBeheer.OpleidingDataSetTableAdapters.DeelnemersTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.opleidingDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opleidingDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deelnemersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button2.Location = new System.Drawing.Point(200, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(182, 68);
             this.button2.TabIndex = 3;
             this.button2.Text = "Weergeven";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -51,15 +62,49 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(13, 87);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(369, 344);
+            this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedValueChanged += new System.EventHandler(this.ListBox1_SelectedValueChanged);
+            // 
+            // opleidingDataSet
+            // 
+            this.opleidingDataSet.DataSetName = "OpleidingDataSet";
+            this.opleidingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // opleidingDataSetBindingSource
+            // 
+            this.opleidingDataSetBindingSource.DataSource = this.opleidingDataSet;
+            this.opleidingDataSetBindingSource.Position = 0;
+            // 
+            // deelnemersBindingSource
+            // 
+            this.deelnemersBindingSource.DataMember = "Deelnemers";
+            this.deelnemersBindingSource.DataSource = this.opleidingDataSetBindingSource;
+            // 
+            // deelnemersTableAdapter
+            // 
+            this.deelnemersTableAdapter.ClearBeforeFill = true;
+            // 
             // DeelnemersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "DeelnemersForm";
             this.Text = "DeelnemersForm";
+            this.Load += new System.EventHandler(this.DeelnemersForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.opleidingDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opleidingDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deelnemersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,5 +113,10 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.BindingSource opleidingDataSetBindingSource;
+        private OpleidingDataSet opleidingDataSet;
+        private System.Windows.Forms.BindingSource deelnemersBindingSource;
+        private OpleidingDataSetTableAdapters.DeelnemersTableAdapter deelnemersTableAdapter;
     }
 }

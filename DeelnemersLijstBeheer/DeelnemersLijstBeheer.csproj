@@ -66,6 +66,12 @@
     <Compile Include="DeelnemersInvulForm.Designer.cs">
       <DependentUpon>DeelnemersInvulForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeelnemersWeergevenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeelnemersWeergevenForm.Designer.cs">
+      <DependentUpon>DeelnemersWeergevenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Docenten.cs" />
     <Compile Include="DocentenForm.cs">
       <SubType>Form</SubType>
@@ -128,6 +134,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NietOpleidingsDagen.cs" />
     <Compile Include="OpleidingDatabaseContext.cs" />
+    <Compile Include="OpleidingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OpleidingDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="OpleidingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeelnemersInvulForm.resx">
       <DependentUpon>DeelnemersInvulForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeelnemersWeergevenForm.resx">
+      <DependentUpon>DeelnemersWeergevenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocentenForm.resx">
       <DependentUpon>DocentenForm.cs</DependentUpon>
@@ -231,6 +245,17 @@
     <EmbeddedResource Include="VakantieInvulForm.resx">
       <DependentUpon>VakantieInvulForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="OpleidingDataSet.xsc">
+      <DependentUpon>OpleidingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OpleidingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OpleidingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OpleidingDataSet.xss">
+      <DependentUpon>OpleidingDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
