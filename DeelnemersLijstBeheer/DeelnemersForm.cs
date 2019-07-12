@@ -11,24 +11,30 @@ using System.Windows.Forms;
 
 namespace DeelnemersLijstBeheer
 {
+
     public partial class DeelnemersForm : Form
     {
+
        public string deelnemer { get; set; }
+            DeelnemersInvulForm deelnemersInvul = new DeelnemersInvulForm();
         public DeelnemersForm()
         {
             InitializeComponent();
         }
 
+       
         private void Button1_Click(object sender, EventArgs e)
         {
-            DeelnemersInvulForm deelnemersInvul = new DeelnemersInvulForm();
+            
             deelnemersInvul.ShowDialog();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            DeelnemersWeergevenForm deelnemersWeergeven = new DeelnemersWeergevenForm();
-            deelnemersWeergeven.ShowDialog();
+            
+            DeelnemersWeergevenForm deelnemersWeergeven = new DeelnemersWeergevenForm(this);
+            
+            deelnemersWeergeven.Show();
              //deelnemer = GetSelectedItem();
         }
 

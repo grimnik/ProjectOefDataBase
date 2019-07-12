@@ -12,42 +12,54 @@ namespace DeelnemersLijstBeheer
 {
     public partial class DeelnemersWeergevenForm : Form
     {
-            
-        public DeelnemersWeergevenForm()
+
+            DeelnemersForm deelnemers;
+        string Deelnemer { get; set; }
+        
+        public DeelnemersWeergevenForm(DeelnemersForm deelnemersForm)
         {
             InitializeComponent();
+            deelnemers = deelnemersForm;
+            
+           Deelnemer = deelnemers.deelnemer;
         }
 
         private void DeelnemersWeergevenForm_Load(object sender, EventArgs e)
         {
+           
 
-            using (DeelnemersForm deelnemers = new DeelnemersForm())
-            {
-                string deelnemer;
+
+                string deelnemer = deelnemers.deelnemer;
                 using(var ctx = new OpleidingDatabaseContext())
                 {
-                    deelnemer = deelnemers.GetSelectedItem();
+                    
 
-                    string id = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                        .Select(c =>  c.Id).ToString();
-                    string naam = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                        .Select(c => c.Naam).ToString();
-                    string geb = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                        .Select(c => c.GeboorteDatum).ToString();
-                    string woon = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                        .Select(c => c.WoonPlaats).ToString();
-                    string badge = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                        .Select(c => c.BadgeNummer).ToString();
-                    label10.Text = id;
+                    var id = ctx.Deelnemers.Where(c => c.Naam == deelnemer) // kan zowiezo beter
+                        .Select(c =>  c.Id).FirstOrDefault();
+                    var naam = ctx.Deelnemers.Where(c => c.Naam == deelnemer)
+                        .Select(c => c.Naam).FirstOrDefault();
+                    var geb = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
+                        .Select(c => c.GeboorteDatum).FirstOrDefault();
+                    var woon = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
+                        .Select(c => c.WoonPlaats).FirstOrDefault();
+                    var badge = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
+                        .Select(c => c.BadgeNummer).FirstOrDefault();
+                    label10.Text = id.ToString();
                     label9.Text = naam;
-                    label8.Text = geb;
+                    label8.Text = geb.Year.ToString();
                     label7.Text = woon;
-                    label6.Text = badge;
+                    label6.Text = badge.ToString();
                     
 
                 }
-            }
             
+            
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            deelnemers.Show();
         }
     }
 }
