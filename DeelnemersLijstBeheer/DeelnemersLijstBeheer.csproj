@@ -173,6 +173,12 @@
     <Compile Include="TijdsregistratieForm.Designer.cs">
       <DependentUpon>TijdsregistratieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TijdsRegistratieWeergevenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TijdsRegistratieWeergevenForm.Designer.cs">
+      <DependentUpon>TijdsRegistratieWeergevenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VakantieDagenForm.cs">
       <SubType>Form</SubType>
     </Compile>
