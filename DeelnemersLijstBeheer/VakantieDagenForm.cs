@@ -12,6 +12,7 @@ namespace DeelnemersLijstBeheer
 {
     public partial class VakantieDagenForm : Form
     {
+        public string vakantie { get; set; }
         public VakantieDagenForm()
         {
             InitializeComponent();
@@ -21,6 +22,34 @@ namespace DeelnemersLijstBeheer
         {
             VakantieInvulForm vakantieInvul = new VakantieInvulForm();
             vakantieInvul.ShowDialog();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            VakantieWeergevenForm vakantieWeergeven = new VakantieWeergevenForm(this);
+            vakantieWeergeven.ShowDialog();
+        }
+
+        private void VakantieDagenForm_Load(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                var vakantie = ctx.NietOpleidingsDagens;
+                foreach (var item in vakantie)
+                {
+                    listBox1.Items.Add(item.Datum);
+                }
+            }
+        }
+        public string GetSelectedItem()
+        {
+            string selected = listBox1.SelectedItem.ToString();
+            return selected;
+        }
+
+        private void ListBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            vakantie = GetSelectedItem();
         }
     }
 }

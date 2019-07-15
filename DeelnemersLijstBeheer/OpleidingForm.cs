@@ -12,6 +12,7 @@ namespace DeelnemersLijstBeheer
 {
     public partial class OpleidingForm : Form
     {
+        public string opleiding { get; set; }
         public OpleidingForm()
         {
             InitializeComponent();
@@ -30,26 +31,30 @@ namespace DeelnemersLijstBeheer
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            OpleidingWeergevenForm opleidingWeergeven = new OpleidingWeergevenForm(this);
+            opleidingWeergeven.ShowDialog();
+        }
+
+        private void OpleidingForm_Load(object sender, EventArgs e)
+        {
             using (var ctx = new OpleidingDatabaseContext())
             {
-                var opleidingvar = ctx.OpleidingsInfos.Select(o => new
+                var opleiding = ctx.OpleidingsInfos;
+                foreach (var item in opleiding)
                 {
-                    
-                    o.Instelling,
-                    o.Opleiding,
-                    o.ContactPersoon,
-                    o.OpleidingsPlaats,
-                    o.RefOpleidingsPlaats,
-                    o.StartDatum,
-                    o.EindDatum
-                });
-                foreach (var item in opleidingvar)
-                {
-                    Console.WriteLine( item.Instelling + " - " +
-                        item.Opleiding +" - "+ item.ContactPersoon +" - "+ item.OpleidingsPlaats +" - "+
-                        item.RefOpleidingsPlaats +" - "+ item.StartDatum + " - " + item.EindDatum);
+                    listBox1.Items.Add(item.Opleiding);
                 }
             }
+        }
+        public string GetSelectedItem()
+        {
+            string selected = listBox1.SelectedItem.ToString();
+            return selected;
+        }
+
+        private void ListBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            opleiding = GetSelectedItem();
         }
     }
 }

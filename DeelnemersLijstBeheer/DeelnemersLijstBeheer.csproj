@@ -158,6 +158,12 @@
       <DependentUpon>OpleidinginvulForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OpleidingsInfo.cs" />
+    <Compile Include="OpleidingWeergevenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpleidingWeergevenForm.Designer.cs">
+      <DependentUpon>OpleidingWeergevenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tijdregistraties.cs" />
@@ -178,6 +184,12 @@
     </Compile>
     <Compile Include="VakantieInvulForm.Designer.cs">
       <DependentUpon>VakantieInvulForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VakantieWeergevenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VakantieWeergevenForm.Designer.cs">
+      <DependentUpon>VakantieWeergevenForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DeelnemersForm.resx">
       <DependentUpon>DeelnemersForm.cs</DependentUpon>
@@ -236,6 +248,9 @@
     <EmbeddedResource Include="OpleidinginvulForm.resx">
       <DependentUpon>OpleidinginvulForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OpleidingWeergevenForm.resx">
+      <DependentUpon>OpleidingWeergevenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -253,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VakantieInvulForm.resx">
       <DependentUpon>VakantieInvulForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VakantieWeergevenForm.resx">
+      <DependentUpon>VakantieWeergevenForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OpleidingDataSet.xsc">
       <DependentUpon>OpleidingDataSet.xsd</DependentUpon>

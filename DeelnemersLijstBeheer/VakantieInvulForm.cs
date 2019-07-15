@@ -31,6 +31,7 @@ namespace DeelnemersLijstBeheer
                         OpleidingsId = int.Parse(textBox1.Text)
                     });
                     ctx.SaveChanges();
+                    Close();
                 }
             }
             else
