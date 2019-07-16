@@ -37,24 +37,6 @@ namespace DeelnemersLijstBeheer
             string deelnemer = deelnemers.deelnemer;
             using (var ctx = new OpleidingDatabaseContext())
             {
-
-
-                var id = ctx.Deelnemers.Where(c => c.Naam == deelnemer) // kan zowiezo beter
-                    .Select(c => c.Id).FirstOrDefault();
-                var naam = ctx.Deelnemers.Where(c => c.Naam == deelnemer)
-                    .Select(c => c.Naam).FirstOrDefault();
-                var geb = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                    .Select(c => c.GeboorteDatum).FirstOrDefault();
-                var woon = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                    .Select(c => c.WoonPlaats).FirstOrDefault();
-                var badge = ctx.Deelnemers.Where(n => n.Naam == deelnemer)
-                    .Select(c => c.BadgeNummer).FirstOrDefault();
-                label10.Text = id.ToString();
-                label9.Text = naam;
-                label8.Text = geb.Year.ToString();
-                label7.Text = woon;
-                label6.Text = badge.ToString();
-
                 var deel = ctx.Deelnemers.Where(c => c.Naam == deelnemer)
                                          .Select(c => c.Id + ";" + c.Naam + ";" + c.GeboorteDatum + ";" + c.WoonPlaats
                                          + ";" + c.BadgeNummer).ToList();
