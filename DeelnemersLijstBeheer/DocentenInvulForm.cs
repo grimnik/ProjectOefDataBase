@@ -23,9 +23,10 @@ namespace DeelnemersLijstBeheer
         {
             if (textBox1.Text != "" && textBox2.Text != "")
             {
+                var selected = comboBox1.SelectedText;
                 using (var ctx = new OpleidingDatabaseContext())
                 {
-                    var opleiding = ctx.OpleidingsInfos.ToList();
+                    var opleiding = ctx.OpleidingsInfos.Where(x=> x.Opleiding == selected).ToList();
                     var DocentenVar = ctx.Docentenen.Add(new Docenten(opleiding)
                     {
                         Naam = textBox1.Text,

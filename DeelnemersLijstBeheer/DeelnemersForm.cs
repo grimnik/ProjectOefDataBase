@@ -15,33 +15,33 @@ namespace DeelnemersLijstBeheer
     public partial class DeelnemersForm : Form
     {
 
-       public string deelnemer { get; set; }
+        public string deelnemer { get; set; }
         public DeelnemersForm()
         {
             InitializeComponent();
         }
 
-       
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+
             DeelnemersInvulForm deelnemersInvul = new DeelnemersInvulForm();
             deelnemersInvul.ShowDialog();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+
             DeelnemersWeergevenForm deelnemersWeergeven = new DeelnemersWeergevenForm(this);
-            
+
             deelnemersWeergeven.Show();
-             //deelnemer = GetSelectedItem();
+            //deelnemer = GetSelectedItem();
         }
 
         private void DeelnemersForm_Load(object sender, EventArgs e)
         {
-            
-            
+
+
             using (var ctx = new OpleidingDatabaseContext())
             {
                 var deelnemer = ctx.Deelnemers;
@@ -50,12 +50,12 @@ namespace DeelnemersLijstBeheer
                     listBox1.Items.Add(item.Naam);
                 }
             }
-            
+
         }
         public string GetSelectedItem()
         {
             string selected = listBox1.SelectedItem.ToString();
-            
+
             return selected;
         }
 
@@ -70,7 +70,19 @@ namespace DeelnemersLijstBeheer
             DeelnemerAanpassenForm aanpassenForm = new DeelnemerAanpassenForm(this);
             aanpassenForm.ShowDialog();
             this.Close();
-            
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext()) 
+            {
+                var deel = ctx.Deelnemers.FirstOrDefault(x => x.Naam == deelnemer);
+                ctx.Deelnemers.Remove(deel);
+                
+                ctx.SaveChanges();
+            }
+
         }
     }
 }
