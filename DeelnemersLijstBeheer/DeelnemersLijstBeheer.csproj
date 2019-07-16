@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeelnemerAanpassenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeelnemerAanpassenForm.Designer.cs">
+      <DependentUpon>DeelnemerAanpassenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Deelnemers.cs" />
     <Compile Include="DeelnemersForm.cs">
       <SubType>Form</SubType>
@@ -197,6 +203,9 @@
     <Compile Include="VakantieWeergevenForm.Designer.cs">
       <DependentUpon>VakantieWeergevenForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DeelnemerAanpassenForm.resx">
+      <DependentUpon>DeelnemerAanpassenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeelnemersForm.resx">
       <DependentUpon>DeelnemersForm.cs</DependentUpon>
     </EmbeddedResource>

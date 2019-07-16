@@ -19,7 +19,7 @@ namespace DeelnemersLijstBeheer
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && dateTimePicker1 != null && textBox3.Text != "" && textBox4.Text != "" )
+            if (textBox1.Text != "" && dateTimePicker1 != null && textBox3.Text != "" && textBox4.Text != ""&& comboBox1.SelectedValue != null )
             {
                 
                 using(var ctx = new OpleidingDatabaseContext())

@@ -64,5 +64,13 @@ namespace DeelnemersLijstBeheer
             deelnemer = GetSelectedItem();
 
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            DeelnemerAanpassenForm aanpassenForm = new DeelnemerAanpassenForm(this);
+            aanpassenForm.ShowDialog();
+            this.Close();
+            
+        }
     }
 }

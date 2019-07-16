@@ -36,6 +36,7 @@
             this.opleidingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deelnemersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deelnemersTableAdapter = new DeelnemersLijstBeheer.OpleidingDataSetTableAdapters.DeelnemersTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.opleidingDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opleidingDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deelnemersBindingSource)).BeginInit();
@@ -65,7 +66,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(14, 88);
+            this.listBox1.Location = new System.Drawing.Point(14, 160);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(368, 344);
             this.listBox1.TabIndex = 4;
@@ -90,11 +91,22 @@
             // 
             this.deelnemersTableAdapter.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(12, 86);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(182, 68);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Aanpassen";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
             // DeelnemersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 449);
+            this.ClientSize = new System.Drawing.Size(393, 514);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -118,5 +130,6 @@
         private OpleidingDataSet opleidingDataSet;
         private System.Windows.Forms.BindingSource deelnemersBindingSource;
         private OpleidingDataSetTableAdapters.DeelnemersTableAdapter deelnemersTableAdapter;
+        private System.Windows.Forms.Button button3;
     }
 }
