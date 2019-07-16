@@ -15,16 +15,16 @@ namespace DeelnemersLijstBeheer
     {
         Deelnemers deelnemers;
         DeelnemersForm DeelnemersForm;
-        private string deelnemer;
-        private void SetDeelnemer(string value)
-        {
-            deelnemer = value;
-        }
+        private string deelnemer { get; set; }
+        //private void SetDeelnemer(string value)
+        //{
+        //    deelnemer = value;
+        //}
         public DeelnemerAanpassenForm(DeelnemersForm deelnemersForm)
         {
             InitializeComponent();
             DeelnemersForm = deelnemersForm;
-            SetDeelnemer(DeelnemersForm.deelnemer);
+            //SetDeelnemer(DeelnemersForm.deelnemer);
 
         }
 
@@ -34,12 +34,12 @@ namespace DeelnemersLijstBeheer
             if (textBox1.Text != "" && dateTimePicker1 != null && textBox3.Text != "" && textBox4.Text != "")
             {
                 
-                string deelnemer = DeelnemersForm.deelnemer;
+                 deelnemer = DeelnemersForm.deelnemer;
                 using (var ctx = new OpleidingDatabaseContext())
                 {
                     deelnemers = ctx.Deelnemers.Where(c => c.Naam == deelnemer)
                                              .FirstOrDefault<Deelnemers>();
-                    ctx.SaveChanges();
+                    //ctx.SaveChanges();
                 }
                 deelnemers.Naam = textBox1.Text;
                 deelnemers.GeboorteDatum = Convert.ToDateTime(dateTimePicker1.Text);

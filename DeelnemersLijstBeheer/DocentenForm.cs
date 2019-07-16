@@ -52,5 +52,12 @@ namespace DeelnemersLijstBeheer
         {
             docent = GetSelectedItem();
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            DocentenAanpassenForm docentenAanpassen = new DocentenAanpassenForm(this);
+            docentenAanpassen.ShowDialog();
+            this.Close();
+        }
     }
 }
