@@ -30,15 +30,15 @@ namespace DeelnemersLijstBeheer
             string deelnemer = DocentenForm.docent;
             using(var ctx = new OpleidingDatabaseContext())
             {
-                var id = ctx.Docentenen.Where(c => c.Naam == docent)
-                    .Select(c => c.Id).FirstOrDefault();
-                var naam = ctx.Docentenen.Where(c => c.Naam == docent)
-                    .Select(c => c.Naam).FirstOrDefault();
-                var bedrijf = ctx.Docentenen.Where(c => c.Naam == docent)
-                    .Select(c => c.Bedrijf).FirstOrDefault();
-                label10.Text = id.ToString();
-                label9.Text = naam;
-                label8.Text = bedrijf;
+                var deel = ctx.Docentenen.Where(c => c.Naam == docent)
+                                         .Select(c => c.Id + ";" + c.Naam + ";" + c.Bedrijf).ToList();
+                foreach (var item in deel)
+                {
+                    string[] value = item.Split(';');
+                    label10.Text = value[0];
+                    label9.Text = value[1];
+                    label8.Text = value[2];
+                }
             }
         }
 
