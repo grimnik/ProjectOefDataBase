@@ -54,7 +54,19 @@ namespace DeelnemersLijstBeheer
                 label8.Text = geb.Year.ToString();
                 label7.Text = woon;
                 label6.Text = badge.ToString();
-                
+
+                var deel = ctx.Deelnemers.Where(c => c.Naam == deelnemer)
+                                         .Select(c => c.Id + ";" + c.Naam + ";" + c.GeboorteDatum + ";" + c.WoonPlaats
+                                         + ";" + c.BadgeNummer).ToList();
+                foreach (var item in deel)
+                {
+                    string[] lines = item.Split(';');
+                    label10.Text = lines[0];
+                    label9.Text = lines[1];
+                    label8.Text = lines[2];
+                    label7.Text = lines[3]; 
+                    label6.Text = lines[4];
+                }
 
             }
 
