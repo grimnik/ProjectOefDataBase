@@ -12,7 +12,7 @@ namespace DeelnemersLijstBeheer
 {
     public partial class TijdsregistratieForm : Form
     {
-        public string tijd { get; set; }
+        public DateTime tijd { get; set; }
         public TijdsregistratieForm()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace DeelnemersLijstBeheer
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            TijdsRegistratieWeergevenForm weergevenForm = new TijdsRegistratieWeergevenForm();
+            TijdsRegistratieWeergevenForm weergevenForm = new TijdsRegistratieWeergevenForm(this);
             weergevenForm.ShowDialog();
         }
 
@@ -31,13 +31,13 @@ namespace DeelnemersLijstBeheer
                 var tijdsreg = ctx.TijdRegistraties;
                 foreach (var item in tijdsreg)
                 {
-                    listBox1.Items.Add(item.DateTime);
+                    listBox1.Items.Add(item.DateTime.Date + item.DateTime.TimeOfDay);
                 }
             }
         }
-        public string GetSelectedItem()
+        public DateTime GetSelectedItem()
         {
-            string selected = listBox1.SelectedItem.ToString();
+            DateTime selected = Convert.ToDateTime(listBox1.SelectedItem);
             return selected;
         }
 

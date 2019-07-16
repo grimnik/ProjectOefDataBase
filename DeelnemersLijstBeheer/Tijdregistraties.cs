@@ -18,5 +18,9 @@ namespace DeelnemersLijstBeheer
         {
             Deelnemers = deelnemers;
         }
+        public Tijdregistraties()
+        {
+
+        }
     }
 }

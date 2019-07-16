@@ -269,6 +269,9 @@
     <EmbeddedResource Include="TijdsregistratieForm.resx">
       <DependentUpon>TijdsregistratieForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TijdsRegistratieWeergevenForm.resx">
+      <DependentUpon>TijdsRegistratieWeergevenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VakantieDagenForm.resx">
       <DependentUpon>VakantieDagenForm.cs</DependentUpon>
     </EmbeddedResource>
