@@ -59,5 +59,15 @@ namespace DeelnemersLijstBeheer
             docentenAanpassen.ShowDialog();
             this.Close();
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                var doc = ctx.Docentenen.FirstOrDefault(x => x.Naam == docent);
+                ctx.Docentenen.Remove(doc);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

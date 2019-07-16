@@ -151,6 +151,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NietOpleidingsDagen.cs" />
+    <Compile Include="OpleidingAanpassenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpleidingAanpassenForm.Designer.cs">
+      <DependentUpon>OpleidingAanpassenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OpleidingDatabaseContext.cs" />
     <Compile Include="OpleidingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907111234492_idopledin.resx">
       <DependentUpon>201907111234492_idopledin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpleidingAanpassenForm.resx">
+      <DependentUpon>OpleidingAanpassenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpleidingForm.resx">
       <DependentUpon>OpleidingForm.cs</DependentUpon>

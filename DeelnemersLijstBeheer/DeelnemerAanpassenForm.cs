@@ -40,15 +40,14 @@ namespace DeelnemersLijstBeheer
                     deelnemers = ctx.Deelnemers.Where(c => c.Naam == deelnemer)
                                              .FirstOrDefault<Deelnemers>();
                     //ctx.SaveChanges();
-                }
+                
                 deelnemers.Naam = textBox1.Text;
                 deelnemers.GeboorteDatum = Convert.ToDateTime(dateTimePicker1.Text);
                 deelnemers.WoonPlaats = textBox3.Text;
                 deelnemers.BadgeNummer = int.Parse(textBox4.Text);
-                using (var dbctx = new OpleidingDatabaseContext())
-                {
-                    dbctx.Entry(deelnemers).State = System.Data.Entity.EntityState.Modified;
-                    dbctx.SaveChanges();
+                
+                    ctx.Entry(deelnemers).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
                 }
                 
             }

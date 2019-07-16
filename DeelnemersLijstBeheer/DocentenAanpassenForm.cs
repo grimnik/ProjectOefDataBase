@@ -54,7 +54,6 @@ namespace DeelnemersLijstBeheer
                 var opleidingen = ctx.OpleidingsInfos.ToArray();
                 foreach (var item in opleidingen)
                 {
-
                     comboBox1.Items.Add(item.Opleiding);
                 }
             }

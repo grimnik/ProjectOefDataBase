@@ -56,5 +56,22 @@ namespace DeelnemersLijstBeheer
         {
             opleiding = GetSelectedItem();
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            OpleidingAanpassenForm aanpassenForm = new OpleidingAanpassenForm(this);
+            aanpassenForm.ShowDialog();
+            this.Close();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                var opleid = ctx.OpleidingsInfos.FirstOrDefault(x => x.Opleiding == opleiding);
+                ctx.OpleidingsInfos.Remove(opleid);
+                ctx.SaveChanges();
+            }
+        }
     }
 }
