@@ -51,5 +51,23 @@ namespace DeelnemersLijstBeheer
         {
             vakantie = GetSelectedItem();
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            VakantieAanpassenForm vakantieAanpassen = new VakantieAanpassenForm(this);
+            vakantieAanpassen.ShowDialog();
+            this.Close();
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                var vak = ctx.NietOpleidingsDagens.FirstOrDefault(x => x.Datum == Convert.ToDateTime(vakantie));
+                ctx.NietOpleidingsDagens.Remove(vak);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

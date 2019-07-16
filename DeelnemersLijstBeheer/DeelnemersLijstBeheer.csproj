@@ -185,6 +185,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tijdregistraties.cs" />
+    <Compile Include="TijdsRegistratieAanpassenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TijdsRegistratieAanpassenForm.Designer.cs">
+      <DependentUpon>TijdsRegistratieAanpassenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TijdsregistratieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,12 @@
     </Compile>
     <Compile Include="TijdsRegistratieWeergevenForm.Designer.cs">
       <DependentUpon>TijdsRegistratieWeergevenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VakantieAanpassenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VakantieAanpassenForm.Designer.cs">
+      <DependentUpon>VakantieAanpassenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VakantieDagenForm.cs">
       <SubType>Form</SubType>
@@ -293,11 +305,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TijdsRegistratieAanpassenForm.resx">
+      <DependentUpon>TijdsRegistratieAanpassenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TijdsregistratieForm.resx">
       <DependentUpon>TijdsregistratieForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TijdsRegistratieWeergevenForm.resx">
       <DependentUpon>TijdsRegistratieWeergevenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VakantieAanpassenForm.resx">
+      <DependentUpon>VakantieAanpassenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VakantieDagenForm.resx">
       <DependentUpon>VakantieDagenForm.cs</DependentUpon>

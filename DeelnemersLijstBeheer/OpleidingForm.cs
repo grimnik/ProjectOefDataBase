@@ -17,24 +17,16 @@ namespace DeelnemersLijstBeheer
         {
             InitializeComponent();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             OpleidinginvulForm opleidingForm = new OpleidinginvulForm();
             opleidingForm.ShowDialog();
-
-            
-
-           
-            
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             OpleidingWeergevenForm opleidingWeergeven = new OpleidingWeergevenForm(this);
             opleidingWeergeven.ShowDialog();
         }
-
         private void OpleidingForm_Load(object sender, EventArgs e)
         {
             using (var ctx = new OpleidingDatabaseContext())
@@ -56,14 +48,12 @@ namespace DeelnemersLijstBeheer
         {
             opleiding = GetSelectedItem();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             OpleidingAanpassenForm aanpassenForm = new OpleidingAanpassenForm(this);
             aanpassenForm.ShowDialog();
             this.Close();
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             using (var ctx = new OpleidingDatabaseContext())
