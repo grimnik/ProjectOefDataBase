@@ -57,7 +57,10 @@ namespace DeelnemersLijstBeheer
                     }
                     else
                     {
+                      
 
+                        listBox2.Items.Clear();
+                        
                         temp = item;
                         listBox2.Items.Add(item);
                     }

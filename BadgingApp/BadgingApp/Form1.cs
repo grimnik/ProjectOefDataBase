@@ -89,7 +89,7 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(2);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     button3.Text = "BADGE OUT";
@@ -104,7 +104,7 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(2);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     ctx.SaveChanges();
@@ -123,7 +123,7 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(3);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     button4.Text = "BADGE OUT";
@@ -138,7 +138,7 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(3);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     ctx.SaveChanges();
@@ -157,7 +157,7 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(4);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     button5.Text = "BADGE OUT";
@@ -172,7 +172,7 @@ namespace BadgingApp
                     var Deelnemer = ctx.Deelnemers.Find(4);
                     var TijdReg = ctx.TijdRegistraties.Add(new Tijdregistraties(Deelnemer)
                     {
-
+                        OpleidingsInfo = Deelnemer.OpleidingsInfo.FirstOrDefault(),
                         DateTime = time
                     });
                     ctx.SaveChanges();
