@@ -92,7 +92,7 @@ namespace BadgingApp
 
                         DateTime = time
                     });
-                    button2.Text = "BADGE OUT";
+                    button3.Text = "BADGE OUT";
                     ctx.SaveChanges();
 
                 }

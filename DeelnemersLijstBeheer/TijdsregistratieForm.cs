@@ -43,12 +43,42 @@ namespace DeelnemersLijstBeheer
 
         private void ListBox1_SelectedValueChanged(object sender, EventArgs e)
         {
+            string temp = "";
             tijd = GetSelectedItem();
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                var naam = ctx.TijdRegistraties.Where(t => t.DateTime == tijd).Select(d => d.Deelnemers.Naam).ToList();
+                foreach (var item in naam)
+                {
+                    item.ToString();
+                    if (item == temp)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+
+                        temp = item;
+                        listBox2.Items.Add(item);
+                    }
+
+                }
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            using (var ctx = new OpleidingDatabaseContext())
+            {
+                var tijdnotatie = ctx.TijdRegistraties.FirstOrDefault(t => t.DateTime == tijd);
+                ctx.TijdRegistraties.Remove(tijdnotatie);
+                ctx.SaveChanges();
+            }
         }
     }
 }
