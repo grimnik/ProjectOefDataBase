@@ -60,12 +60,6 @@ namespace BadgingApp
                 }
             }
         }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             if (button2.Text == "BADGE IN")
