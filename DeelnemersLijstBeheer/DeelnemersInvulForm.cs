@@ -18,14 +18,14 @@ namespace DeelnemersLijstBeheer
         }
 
         private void Button1_Click(object sender, EventArgs e)
-        {
+         {
             if (textBox1.Text != "" && dateTimePicker1 != null && textBox3.Text != "" && textBox4.Text != ""&& comboBox1 != null )
             {
-                var selected = comboBox1.SelectedText;
+                var selected = comboBox1.SelectedItem.ToString();
                 using(var ctx = new OpleidingDatabaseContext())
                 {
                     var Opleiding = ctx.OpleidingsInfos.Where(x => x.Opleiding == selected).ToList();
-                    
+
 
 
                     var DeelnemersVar = ctx.Deelnemers.Add(new Deelnemers(Opleiding)
@@ -33,9 +33,9 @@ namespace DeelnemersLijstBeheer
                         Naam = textBox1.Text,
                         GeboorteDatum = DateTime.Parse(dateTimePicker1.Text),
                         WoonPlaats = textBox3.Text,
-                        BadgeNummer = int.Parse(textBox4.Text)
+                        BadgeNummer = int.Parse(textBox4.Text),
                         
-                    });
+                    }); 
                     
                     ctx.SaveChanges();
                 }
@@ -50,7 +50,7 @@ namespace DeelnemersLijstBeheer
         {
             using (var ctx = new OpleidingDatabaseContext())
             {
-                comboBox1.Text = ctx.OpleidingsInfos.Find(1).Opleiding.ToString();
+                comboBox1.Items.Add(ctx.OpleidingsInfos.Find(1).Opleiding.ToString());
             }
         }
     }
