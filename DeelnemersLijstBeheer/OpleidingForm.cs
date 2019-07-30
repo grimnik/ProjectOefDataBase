@@ -40,7 +40,18 @@ namespace DeelnemersLijstBeheer
         }
         public string GetSelectedItem()
         {
-            string selected = listBox1.SelectedItem.ToString();
+            string selected = null;
+            if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an item in the list", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ;
+            }
+            else
+            {
+
+                selected = listBox1.SelectedItem.ToString();
+            }
+
             return selected;
         }
 

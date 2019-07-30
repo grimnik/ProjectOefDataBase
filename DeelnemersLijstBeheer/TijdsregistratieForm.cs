@@ -37,6 +37,7 @@ namespace DeelnemersLijstBeheer
         }
         public DateTime GetSelectedItem()
         {
+            
             DateTime selected = Convert.ToDateTime(listBox1.SelectedItem);
             return selected;
         }
