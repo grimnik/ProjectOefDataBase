@@ -46,8 +46,7 @@ namespace DeelnemersLijstBeheer
             string selected = null;
             if (listBox1.SelectedItem == null)
             {
-                MessageBox.Show("Please select an item in the list", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            ;
+                MessageBox.Show("Please select an item in the list", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

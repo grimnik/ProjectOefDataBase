@@ -32,7 +32,7 @@ namespace DeelnemersLijstBeheer
                         Naam = textBox1.Text,
                         Bedrijf = textBox2.Text
                     });
-                    ctx.SaveChanges();
+                    
                 }
             }
             else
